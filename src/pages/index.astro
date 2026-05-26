@@ -417,6 +417,33 @@ import Layout from '../layouts/Layout.astro';
           method="POST"
           class="contact-form"
         >
+          <div class="form-row form-row-split">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your name"
+              required
+              class="form-input"
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email address"
+              required
+              class="form-input"
+            />
+          </div>
+          <div class="form-row">
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="Phone number (optional)"
+              class="form-input"
+            />
+          </div>
           <div class="form-row">
             <input
               type="text"
@@ -970,6 +997,18 @@ import Layout from '../layouts/Layout.astro';
 
   .form-row {
     width: 100%;
+  }
+
+  .form-row-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  @media (max-width: 600px) {
+    .form-row-split {
+      grid-template-columns: 1fr;
+    }
   }
 
   .form-input {
