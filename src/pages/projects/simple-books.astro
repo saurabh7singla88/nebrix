@@ -1,0 +1,482 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const features = [
+  {
+    title: 'Invoices & Bills',
+    desc: 'Create and manage customer invoices and vendor bills with file attachments. Track payment status and outstanding balances at a glance.',
+    icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 7h8M8 11h8M8 15h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+  },
+  {
+    title: 'Recurring Expenses',
+    desc: 'Set up expense templates that auto-generate bills on a schedule — weekly, monthly, or custom. No more manual re-entry for repeat costs.',
+    icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 018-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M20 12a8 8 0 01-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M4 8l0 4 4 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 16l0-4-4 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  },
+  {
+    title: 'Chart of Accounts & Journal Entries',
+    desc: 'Full double-entry bookkeeping with a structured chart of accounts. Post manual journal entries and let invoices and bills update the ledger automatically.',
+    icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 10h18M3 14h12M3 18h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+  },
+  {
+    title: 'Financial Reports',
+    desc: 'Profit & Loss and Balance Sheet reports generated on demand. Dashboard surfaces key metrics — receivables, payables, and active contacts — at a glance.',
+    icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 20V12l5-5 4 4 5-6 4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  },
+  {
+    title: 'Role-Based Access Control',
+    desc: 'Three user roles — Admin, Accountant, and Viewer — with appropriate permissions at each level. Invite your bookkeeper without exposing sensitive settings.',
+    icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 20c0-3.314 2.686-6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="17" cy="14" r="2" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 20c0-1.933 1.567-3.5 3.5-3.5s3.5 1.567 3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+  },
+  {
+    title: 'Self-Hosted, Zero Dependencies',
+    desc: 'Runs entirely in Docker — no third-party services, no SaaS subscriptions, no data leaving your infrastructure. SQLite keeps it simple to back up and migrate.',
+    icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 5H8V10H13V5Z" fill="currentColor"/><path d="M14 5H19V10H14V5Z" fill="currentColor" opacity="0.5"/><path d="M8 11H13V16H8V11Z" fill="currentColor" opacity="0.5"/><path d="M3 11H8V16H3V11Z" fill="currentColor" opacity="0.3"/><path d="M14 11H19V16H14V11Z" fill="currentColor" opacity="0.3"/><path d="M20.5 12.5C21.5 12.5 22 13 22 14C22 16.5 20 19 16 19.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M2 14C2 11.5 4 10 6 10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>',
+  },
+];
+
+const stack = ['React 18', 'Vite', 'Tailwind CSS', 'Node.js 20', 'Express', 'Drizzle ORM', 'SQLite', 'Docker'];
+---
+
+<Layout
+  title="Simple Books — Nebrix"
+  description="Lightweight self-hosted accounting app for small businesses. Invoices, bills, expenses, journal entries, and financial reports with role-based access control."
+>
+  <div class="detail-page">
+    <div class="container">
+
+      <a href="/#projects" class="back-link">← All Projects</a>
+
+      <!-- ── Hero ── -->
+      <section class="d-hero">
+        <div class="d-hero-meta">
+          <span class="product-cat">Self-Hosted Web App</span>
+        </div>
+        <h1 class="d-hero-name">Simple Books</h1>
+        <p class="d-hero-tagline">Lightweight accounting for small businesses</p>
+        <p class="d-hero-desc">
+          A self-hosted accounting app that covers the essentials without the bloat.
+          Invoices, bills, recurring expenses, chart of accounts, journal entries,
+          and financial reports — with role-based access control and zero external
+          dependencies.
+        </p>
+        <div class="d-hero-actions">
+          <a href="https://hub.docker.com/repository/docker/nebrix001/simple-books" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px"><path d="M13 5H8V10H13V5Z" fill="currentColor"/><path d="M14 5H19V10H14V5Z" fill="currentColor" opacity="0.5"/><path d="M8 11H13V16H8V11Z" fill="currentColor" opacity="0.5"/><path d="M3 11H8V16H3V11Z" fill="currentColor" opacity="0.3"/><path d="M14 11H19V16H14V11Z" fill="currentColor" opacity="0.3"/><path d="M20.5 12.5C21.5 12.5 22 13 22 14C22 16.5 20 19 16 19.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M2 14C2 11.5 4 10 6 10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            Docker Hub
+          </a>
+          <a href="https://github.com/nebrix001/accounts" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" fill="currentColor"/></svg>
+            GitHub
+          </a>
+          <div class="platform-row">
+            <span class="platform-pill">
+              <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M7 1.5C7 1.5 5 4 5 7s2 5.5 2 5.5M7 1.5C7 1.5 9 4 9 7s-2 5.5-2 5.5M1.5 7h11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              Web App
+            </span>
+            <span class="platform-pill">
+              <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M13 5H8V10H13V5Z" fill="currentColor" opacity="0.6"/><path d="M14 5H19V10H14V5Z" fill="currentColor" opacity="0.4"/><path d="M2 7C2 4.8 4 3 6 3.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><path d="M12 9.5C8 10 6 7.5 7 5.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+              </svg>
+              Self-Hosted
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <div class="browser-frame">
+        <div class="browser-bar">
+          <span class="bdot"></span>
+          <span class="bdot"></span>
+          <span class="bdot"></span>
+        </div>
+        <div class="browser-body">
+          <button class="browser-img-btn" data-lightbox="/images/simple-books/web-1.png" data-alt="Simple Books — Dashboard" aria-label="View Simple Books Dashboard">
+            <img src="/images/simple-books/web-1.png" alt="Simple Books — Dashboard" class="browser-img" />
+          </button>
+        </div>
+      </div>
+
+      <!-- ── Features ── -->
+      <section class="d-section">
+        <p class="d-label">Features</p>
+        <h2 class="d-heading">What it does</h2>
+        <div class="features-grid">
+          {features.map(f => (
+            <div class="feature-card">
+              <div class="feature-icon" set:html={f.icon}></div>
+              <h3 class="feature-title">{f.title}</h3>
+              <p class="feature-desc">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- ── Screenshots ── -->
+      <section class="d-section">
+        <p class="d-label">Screenshots</p>
+        <h2 class="d-heading">See it in action</h2>
+        <div class="screenshots-grid screenshots-grid--wide">
+          <figure class="shot-slot">
+            <button class="shot-img-wrap" data-lightbox="/images/simple-books/web-2.png" data-alt="Chart of Accounts" aria-label="View Chart of Accounts">
+              <img src="/images/simple-books/web-2.png" alt="Chart of Accounts" />
+            </button>
+            <figcaption class="shot-caption">Chart of Accounts</figcaption>
+          </figure>
+          <figure class="shot-slot">
+            <button class="shot-img-wrap" data-lightbox="/images/simple-books/web-3.png" data-alt="Recurring Expenses" aria-label="View Recurring Expenses">
+              <img src="/images/simple-books/web-3.png" alt="Recurring Expenses" />
+            </button>
+            <figcaption class="shot-caption">Recurring Expenses</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ── Lightbox ── -->
+      <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+        <button id="lightbox-close" class="lightbox-close" aria-label="Close">✕</button>
+        <img id="lightbox-img" src="" alt="" />
+      </div>
+
+      <!-- ── Tech Stack ── -->
+      <section class="d-section d-stack">
+        <p class="d-label">Tech Stack</p>
+        <div class="stack-pills">
+          {stack.map(t => <span class="stack-pill">{t}</span>)}
+        </div>
+      </section>
+
+      <div class="d-bottom">
+        <a href="/#projects" class="back-link">← Back to Projects</a>
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  /* ── Page ── */
+  .detail-page {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  /* ── Back link ── */
+  .back-link {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--text-2);
+    padding: 32px 0 0;
+    transition: color 0.15s;
+  }
+  .back-link:hover {
+    color: var(--text-1);
+  }
+
+  /* ── Hero ── */
+  .d-hero {
+    padding: 56px 0 48px;
+    max-width: 660px;
+  }
+  .d-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-2);
+    border-color: var(--border);
+  }
+  .btn-ghost:hover {
+    color: var(--text-1);
+    border-color: var(--border-hover);
+  }
+  .product-cat {
+    font-size: 13px;
+    color: var(--text-2);
+  }
+  .d-hero-name {
+    font-size: clamp(48px, 7vw, 72px);
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+  .d-hero-tagline {
+    font-size: 18px;
+    color: var(--text-2);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .d-hero-desc {
+    font-size: 15px;
+    color: var(--text-2);
+    line-height: 1.8;
+    max-width: 520px;
+    margin-bottom: 28px;
+  }
+  .d-hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  /* ── Platform pills ── */
+  .platform-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .platform-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-2);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 6px 12px;
+    border-radius: 100px;
+  }
+
+  /* ── Buttons ── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+  }
+  .btn-primary:hover {
+    opacity: 0.85;
+  }
+
+  /* ── Browser frame ── */
+  .browser-frame {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 80px;
+  }
+  .browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-2);
+  }
+  .bdot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    display: block;
+  }
+  .browser-body {
+    position: relative;
+  }
+  :global(.browser-img) {
+    width: 100%;
+    display: block;
+  }
+  .browser-img-btn {
+    display: block;
+    width: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: zoom-in;
+    transition: opacity 0.2s;
+  }
+  .browser-img-btn:hover {
+    opacity: 0.88;
+  }
+
+  /* ── Sections ── */
+  .d-section {
+    margin-bottom: 72px;
+  }
+  .d-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-bottom: 12px;
+  }
+  .d-heading {
+    font-size: clamp(24px, 3.5vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 32px;
+  }
+
+  /* ── Features grid ── */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .feature-card {
+    background: var(--bg);
+    padding: 28px 24px;
+  }
+  .feature-icon {
+    color: var(--text-2);
+    margin-bottom: 14px;
+  }
+  .feature-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-1);
+  }
+  .feature-desc {
+    font-size: 13px;
+    color: var(--text-3);
+    line-height: 1.7;
+  }
+
+  /* ── Screenshots ── */
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .screenshots-grid--wide {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+  .shot-slot {
+    margin: 0;
+  }
+  .shot-img-wrap {
+    display: block;
+    width: 100%;
+    padding: 0;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    cursor: zoom-in;
+    transition: border-color 0.15s, opacity 0.15s;
+  }
+  .shot-img-wrap:hover {
+    border-color: var(--border-hover);
+    opacity: 0.88;
+  }
+  .shot-img-wrap img {
+    width: 100%;
+    display: block;
+  }
+  .shot-caption {
+    font-size: 12px;
+    color: var(--text-3);
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  /* ── Lightbox ── */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.88);
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+  }
+  .lightbox.open {
+    display: flex;
+  }
+  .lightbox img {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: var(--radius);
+    object-fit: contain;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  .lightbox-close:hover {
+    color: #fff;
+  }
+
+  /* ── Stack ── */
+  .d-stack {
+    margin-bottom: 48px;
+  }
+  .stack-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .stack-pill {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-2);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 6px 14px;
+    border-radius: 100px;
+  }
+
+  /* ── Bottom ── */
+  .d-bottom {
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+</style>
+
+<script>
+  const lightbox = document.getElementById('lightbox') as HTMLDivElement | null;
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  const lightboxClose = document.getElementById('lightbox-close') as HTMLButtonElement | null;
+
+  document.querySelectorAll('[data-lightbox]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const src = btn.getAttribute('data-lightbox') ?? '';
+      const alt = btn.getAttribute('data-alt') ?? '';
+      if (lightboxImg) { lightboxImg.src = src; lightboxImg.alt = alt; }
+      lightbox?.classList.add('open');
+    });
+  });
+
+  lightboxClose?.addEventListener('click', () => lightbox?.classList.remove('open'));
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('open');
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox?.classList.remove('open');
+  });
+</script>
