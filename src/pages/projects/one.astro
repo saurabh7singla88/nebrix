@@ -40,7 +40,6 @@ const stack = ['Electron', 'React', 'Node.js', 'TypeScript', 'OpenAI API', 'Gmai
       <!-- ── Hero ── -->
       <section class="d-hero">
         <div class="d-hero-meta">
-          <span class="beta-badge">Beta</span>
           <span class="product-cat">Desktop & Web App</span>
         </div>
         <h1 class="d-hero-name">One</h1>
@@ -51,8 +50,10 @@ const stack = ['Electron', 'React', 'Node.js', 'TypeScript', 'OpenAI API', 'Gmai
           — with AI analysis, Gmail integration, and JIRA/Confluence connectivity.
         </p>
         <div class="d-hero-actions">
-          <!-- TODO: Replace # with your app/waitlist URL -->
-          <a href="#" class="btn btn-primary">Join Waitlist</a>
+          <a href="https://hub.docker.com/repository/docker/nebrix001/one-app/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px"><path d="M13 5H8V10H13V5Z" fill="currentColor"/><path d="M14 5H19V10H14V5Z" fill="currentColor" opacity="0.5"/><path d="M8 11H13V16H8V11Z" fill="currentColor" opacity="0.5"/><path d="M3 11H8V16H3V11Z" fill="currentColor" opacity="0.3"/><path d="M14 11H19V16H14V11Z" fill="currentColor" opacity="0.3"/><path d="M20.5 12.5C21.5 12.5 22 13 22 14C22 16.5 20 19 16 19.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M2 14C2 11.5 4 10 6 10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            Docker Hub
+          </a>
           <div class="platform-row">
             <span class="platform-pill">
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -72,13 +73,6 @@ const stack = ['Electron', 'React', 'Node.js', 'TypeScript', 'OpenAI API', 'Gmai
         </div>
       </section>
 
-      <!-- ── Hero Screenshot ── -->
-      <!--
-        📸 ADD HERO SCREENSHOT
-        1. Save your file at:  public/images/one/hero.png  (recommended: 1440×900)
-        2. Replace the <div class="img-ph large"> below with:
-           <img src="/images/one/hero.png" alt="One dashboard" class="browser-img" />
-      -->
       <div class="browser-frame">
         <div class="browser-bar">
           <span class="bdot"></span>
@@ -86,7 +80,9 @@ const stack = ['Electron', 'React', 'Node.js', 'TypeScript', 'OpenAI API', 'Gmai
           <span class="bdot"></span>
         </div>
         <div class="browser-body">
-          <img src="/images/one/screenshot-1.png" alt="One — Initiative Dashboard" class="browser-img" />
+          <button class="browser-img-btn" data-lightbox="/images/one/web-0.png" data-alt="One — Dashboard" aria-label="View One Dashboard">
+            <img src="/images/one/web-0.png" alt="One — Dashboard" class="browser-img" />
+          </button>
         </div>
       </div>
 
@@ -106,29 +102,54 @@ const stack = ['Electron', 'React', 'Node.js', 'TypeScript', 'OpenAI API', 'Gmai
       </section>
 
       <!-- ── Screenshots ── -->
-      <!--
-        📸 ADD SCREENSHOTS
-        For each slot below, save the image at the path shown in <code>, then replace
-        the <div class="img-ph"> with: <img src="/images/one/FILENAME" alt="LABEL" />
-      -->
       <section class="d-section">
         <p class="d-label">Screenshots</p>
         <h2 class="d-heading">See it in action</h2>
-        <div class="screenshots-grid">
+        <div class="screenshots-grid screenshots-grid--wide">
           <figure class="shot-slot">
-            <img src="/images/one/screenshot-2.png" alt="AI Summary View" />
-            <figcaption class="shot-caption">AI Summary View</figcaption>
+            <button class="shot-img-wrap" data-lightbox="/images/one/web-1.png" data-alt="Meeting Notes" aria-label="View Meeting Notes">
+              <img src="/images/one/web-1.png" alt="Meeting Notes" />
+            </button>
+            <figcaption class="shot-caption">Meeting Notes</figcaption>
           </figure>
           <figure class="shot-slot">
-            <img src="/images/one/screenshot-3.png" alt="Mindmap View" />
-            <figcaption class="shot-caption">Mindmap View</figcaption>
+            <button class="shot-img-wrap" data-lightbox="/images/one/web-2.png" data-alt="Day Planner" aria-label="View Day Planner">
+              <img src="/images/one/web-2.png" alt="Day Planner" />
+            </button>
+            <figcaption class="shot-caption">Day Planner</figcaption>
           </figure>
           <figure class="shot-slot">
-            <img src="/images/one/screenshot-4.png" alt="Gmail Integration" />
-            <figcaption class="shot-caption">Gmail Integration</figcaption>
+            <button class="shot-img-wrap" data-lightbox="/images/one/web-3.png" data-alt="Dashboard" aria-label="View Dashboard">
+              <img src="/images/one/web-3.png" alt="Dashboard" />
+            </button>
+            <figcaption class="shot-caption">Dashboard</figcaption>
+          </figure>
+          <figure class="shot-slot">
+            <button class="shot-img-wrap" data-lightbox="/images/one/web-4.png" data-alt="Tasks" aria-label="View Tasks">
+              <img src="/images/one/web-4.png" alt="Tasks" />
+            </button>
+            <figcaption class="shot-caption">Tasks</figcaption>
+          </figure>
+          <figure class="shot-slot">
+            <button class="shot-img-wrap" data-lightbox="/images/one/web-5.png" data-alt="Mind Map" aria-label="View Mind Map">
+              <img src="/images/one/web-5.png" alt="Mind Map" />
+            </button>
+            <figcaption class="shot-caption">Mind Map</figcaption>
+          </figure>
+          <figure class="shot-slot">
+            <button class="shot-img-wrap" data-lightbox="/images/one/web-6.png" data-alt="AI Model Settings" aria-label="View AI Model Settings">
+              <img src="/images/one/web-6.png" alt="AI Model Settings" />
+            </button>
+            <figcaption class="shot-caption">AI Model Settings</figcaption>
           </figure>
         </div>
       </section>
+
+      <!-- ── Lightbox ── -->
+      <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+        <button id="lightbox-close" class="lightbox-close" aria-label="Close">✕</button>
+        <img id="lightbox-img" src="" alt="" />
+      </div>
 
       <!-- ── Tech Stack ── -->
       <section class="d-section d-stack">
@@ -176,16 +197,14 @@ const stack = ['Electron', 'React', 'Node.js', 'TypeScript', 'OpenAI API', 'Gmai
     gap: 12px;
     margin-bottom: 20px;
   }
-  .beta-badge {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #93c5fd;
-    border: 1px solid rgba(147, 197, 253, 0.2);
-    background: rgba(147, 197, 253, 0.07);
-    padding: 3px 10px;
-    border-radius: 100px;
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-2);
+    border-color: var(--border);
+  }
+  .btn-ghost:hover {
+    color: var(--text-1);
+    border-color: var(--border-hover);
   }
   .product-cat {
     font-size: 13px;
@@ -289,6 +308,18 @@ const stack = ['Electron', 'React', 'Node.js', 'TypeScript', 'OpenAI API', 'Gmai
     width: 100%;
     display: block;
   }
+  .browser-img-btn {
+    display: block;
+    width: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: zoom-in;
+    transition: opacity 0.2s;
+  }
+  .browser-img-btn:hover {
+    opacity: 0.88;
+  }
 
   /* ── Image placeholder ── */
   .img-ph {
@@ -390,7 +421,10 @@ const stack = ['Electron', 'React', 'Node.js', 'TypeScript', 'OpenAI API', 'Gmai
   .screenshots-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 20px;
+  }
+  .screenshots-grid--wide {
+    grid-template-columns: repeat(3, 1fr);
   }
   .shot-slot {
     display: flex;
@@ -403,10 +437,27 @@ const stack = ['Electron', 'React', 'Node.js', 'TypeScript', 'OpenAI API', 'Gmai
     padding: 40px 24px;
     flex: 1;
   }
-  .shot-slot img {
-    width: 100%;
+  .shot-slot .shot-img-wrap {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
     border-radius: var(--radius);
     border: 1px solid var(--border);
+    background: var(--surface);
+    display: block;
+    width: 100%;
+    padding: 0;
+    transition: border-color 0.2s, opacity 0.2s;
+    cursor: zoom-in;
+  }
+  .shot-slot .shot-img-wrap:hover {
+    border-color: var(--border-hover);
+    opacity: 0.85;
+  }
+  .shot-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
     display: block;
   }
   .shot-caption {
@@ -453,4 +504,82 @@ const stack = ['Electron', 'React', 'Node.js', 'TypeScript', 'OpenAI API', 'Gmai
   .d-bottom .back-link {
     padding-top: 0;
   }
+
+  /* ── Lightbox ── */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .lightbox.open {
+    display: flex;
+  }
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 88vh;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    object-fit: contain;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+  }
+  .lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text-1);
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+    z-index: 1001;
+  }
+  .lightbox-close:hover {
+    background: var(--surface);
+  }
 </style>
+
+<script>
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const lbClose = document.getElementById('lightbox-close');
+
+  function openLightbox(src, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-lightbox]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      openLightbox(btn.dataset.lightbox, btn.dataset.alt);
+    });
+  });
+
+  lbClose.addEventListener('click', closeLightbox);
+
+  lb.addEventListener('click', (e) => {
+    if (e.target === lb) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
